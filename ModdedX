@@ -21,7 +21,7 @@
 ----------------------------------------------------------------------------------------------------------------         
 
 getgenv().ModdedX = {
-    ["Key"] = "1hdsncNw0e921e0lNf4j324", 
+    ["Key"] = "leRqVZJuEw0nREDsFESzoDnRgsGLso0n",  -- use ur key from our discord server
     ["Enabled"] = true,
 }
 
@@ -30,7 +30,7 @@ local function validateKey()
 
     if enteredKey == "" then
         print("No key provided, shutting down the game!")
-        game.Players.LocalPlayer:Kick("ur key is not valid lil nigga get a new key in #get-your-key.") 
+        game.Players.LocalPlayer:Kick("ur key is not valid lil nigga go get a new key in #get-your-key.") 
         return false
     end
 
