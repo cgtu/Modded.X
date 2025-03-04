@@ -15,11 +15,7 @@
          ██║╚██╔╝██║██╔══██║██║  ██║██╔══╝      ██╔══██╗  ╚██╔╝      ██╔══██║██║     ██╔══╝   ██╔██╗ 
          ██║ ╚═╝ ██║██║  ██║██████╔╝███████╗    ██████╔╝   ██║       ██║  ██║███████╗███████╗██╔╝ ██╗
          ╚═╝     ╚═╝╚═╝  ╚═╝╚═════╝ ╚══════╝    ╚═════╝    ╚═╝       ╚═╝  ╚═╝╚══════╝╚══════╝╚═╝  ╚═╝    
- 
- getgenv().ModdedX = { 
-     ["Key"] = "Your Key Here",
-     ["Enabled"] = true,
---]]     
+--]]        
 
 if IY_LOADED and not _G.IY_DEBUG == true then
     -- error("Modded.X is already running!", 0)
@@ -7808,10 +7804,6 @@ addcmd('allowrejoin',{'allowrj'},function(args, speaker)
 		allow_rj = true
 		notify('Client AntiTP','Allow rejoin set to true')
 	end
-end)
-
-addcmd('ngker'),function(args, speaker)
-	 game.Players.LocalPlayer:Kick("fuck you lmfao ☠️💔")
 end)
 
 addcmd('cancelteleport',{'canceltp'},function(args, speaker)
