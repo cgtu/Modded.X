@@ -30,7 +30,7 @@ local function validateKey()
 
     if enteredKey == "" then
         print("No key provided, shutting down the game!")
-        game:Shutdown()
+game.Players.LocalPlayer:Kick("ur key not valid lil nigga go get a new one in #get-your-key.") 
         return false
     end
 
