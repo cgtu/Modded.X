@@ -20,28 +20,6 @@
 --                                                                                                                                                                                   
 ----------------------------------------------------------------------------------------------------------------         
 
-getgenv().ModdedX = {
-    ["Key"] = "leRqVZJuEw0nREDsFESzoDnRgsGLso0n",  -- use ur key from our discord server
-    ["Enabled"] = true,
-}
-
-local function validateKey()
-    local enteredKey = getgenv().ModdedX["Key"]
-
-    if enteredKey == "" then
-        print("No key provided, shutting down the game!")
-        game.Players.LocalPlayer:Kick("ur key is not valid lil nigga go get a new key in #get-your-key.") 
-        return false
-    end
-
-    print("Key entered: " .. enteredKey .. " -- The script will proceed.")
-    return true
-end
-
-if validateKey() then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/cgtu/Modded.X/refs/heads/main/ModdedX"))()
-end
-
 if IY_LOADED and not _G.IY_DEBUG == true then
     -- error("Modded.X is already running!", 0)
     return
