@@ -21,32 +21,27 @@
 ----------------------------------------------------------------------------------------------------------------         
 
 getgenv().ModdedX = {
-    ["Key"] = "",  -- Default key field, leave empty for now
-    ["Enabled"] = true -- Toggle the script on or off (true = enabled, false = disabled)
+    ["Key"] = "", 
+    ["Enabled"] = true, 
 }
 
-local function isValidKey(key)
-    return key ~= "" and #key == 32
+local function validateKey()
+    local enteredKey = getgenv().ModdedX["Key"]
+
+    if enteredKey == "" then
+        print("No key provided, shutting down the game!")
+        game:Shutdown()
+        return false
+    end
+
+    -- If the key is not empty, we enable the script
+    print("Key entered: " .. enteredKey .. " -- The script will proceed.")
+    return true
 end
 
-if not getgenv().ModdedX["Enabled"] then
-    print("The script is disabled.")
-    return  -- If the script is disabled, stop the execution
-end
-
-if getgenv().ModdedX["Key"] == "" then
-    game.Players.LocalPlayer:Kick("You must enter a valid key!")
-    return
-end
-
-if not isValidKey(getgenv().ModdedX["Key"]) then
-    game.Players.LocalPlayer:Kick("Invalid key! The key must be exactly 32 characters long.")
-    return
-end
-
-getgenv().ModdedX["Main"] = {
+if validateKey() then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/cgtu/Modded.X/refs/heads/main/ModdedX"))()
-}
+end
 
 if IY_LOADED and not _G.IY_DEBUG == true then
     -- error("Modded.X is already running!", 0)
