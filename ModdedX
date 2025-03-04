@@ -45,7 +45,7 @@ if not isValidKey(getgenv().ModdedX["Key"]) then
 end
 
 getgenv().ModdedX["Main"] = {
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/cgtu/ModdedX/refs/heads/main/moddedexploitslol"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/cgtu/Modded.X/refs/heads/main/ModdedX"))()
 }
 
 if IY_LOADED and not _G.IY_DEBUG == true then
