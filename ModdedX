@@ -21,8 +21,8 @@
 ----------------------------------------------------------------------------------------------------------------         
 
 getgenv().ModdedX = {
-    ["Key"] = "", 
-    ["Enabled"] = true, 
+    ["Key"] = "1hdsncNw0e921e0lNf4j324", 
+    ["Enabled"] = true,
 }
 
 local function validateKey()
@@ -30,11 +30,10 @@ local function validateKey()
 
     if enteredKey == "" then
         print("No key provided, shutting down the game!")
-game.Players.LocalPlayer:Kick("ur key not valid lil nigga go get a new one in #get-your-key.") 
+        game.Players.LocalPlayer:Kick("ur key is not valid lil nigga get a new key in #get-your-key.") 
         return false
     end
 
-    -- If the key is not empty, we enable the script
     print("Key entered: " .. enteredKey .. " -- The script will proceed.")
     return true
 end
